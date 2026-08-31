@@ -1,0 +1,6 @@
+torch>=2.2
+numpy>=1.26
+onnx>=1.16
+# optional, only if you switch to sklearn/gradient-boosting models:
+# scikit-learn>=1.4
+# skl2onnx>=1.16
