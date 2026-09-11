@@ -1,0 +1,30 @@
+version: "1.0.0"
+place_query: "Guntur, Andhra Pradesh, India"
+download_strategy: "central_point"
+# Used only if the place boundary cannot be retrieved; a 7 km radius produces a
+# compact, documented central-Guntur study area (not fabricated road geometry).
+fallback_center: {latitude: 16.3067, longitude: 80.4365, dist_m: 7000}
+random_seed: 20260911
+# Representative hours preserve weekday/weekend, morning, midday, evening and night
+# conditions without committing an impractically huge sensor-like archive.
+baseline_dates: ["2026-09-11", "2026-09-12"]
+baseline_hours: [7, 9, 12, 15, 17, 21, 22]
+bpr: {alpha: 0.15, beta: 4.0, v_c_cap: 4.0}
+modal_split:
+  version: "guntur-demo-modal-v1"
+  car: 0.30
+  bike: 0.40
+  bus: 0.15
+  auto_rickshaw: 0.10
+  walk: 0.05
+occupancy: {car: 2.2, bike: 1.3, bus: 35.0, auto_rickshaw: 2.0}
+zone_vehicle_shares: {north: 0.22, south: 0.20, east: 0.20, west: 0.18, central: 0.20}
+road_assumptions:
+  motorway: {speed_kph: 70, lanes: 4, capacity_per_lane_vph: 1800}
+  trunk: {speed_kph: 60, lanes: 3, capacity_per_lane_vph: 1700}
+  primary: {speed_kph: 45, lanes: 2, capacity_per_lane_vph: 1500}
+  secondary: {speed_kph: 38, lanes: 2, capacity_per_lane_vph: 1300}
+  tertiary: {speed_kph: 32, lanes: 1, capacity_per_lane_vph: 1000}
+  residential: {speed_kph: 25, lanes: 1, capacity_per_lane_vph: 700}
+  service: {speed_kph: 18, lanes: 1, capacity_per_lane_vph: 500}
+  unclassified: {speed_kph: 25, lanes: 1, capacity_per_lane_vph: 700}

@@ -1,0 +1,7 @@
+{
+  "place_query": "Guntur, Andhra Pradesh, India",
+  "network_type": "drive",
+  "simplify": true,
+  "retrieved_at": "2026-09-11T17:28:04+00:00",
+  "query_method": "graph_from_place"
+}

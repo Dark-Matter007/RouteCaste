@@ -1394,6 +1394,19 @@ https://github.com/Dark-Matter007/RouteCaste
 
 ## Disclaimer
 
+## Guntur dataset-driven event routing
+
+RouteCast now includes a connected Guntur, Andhra Pradesh pipeline. It downloads a real directed OpenStreetMap drive graph, exports source-preserving roads/nodes, creates clearly labelled modeled baseline traffic, assigns event vehicles over real graph paths, computes BPR dynamic edge weights, and exposes normal/event-aware Dijkstra, A*, and bidirectional comparisons at `/api/guntur` and in the dashboard's **Guntur event routing** panel. The original 8×8 graph is still available as a fallback/demo mode.
+
+```powershell
+python scripts/build_guntur_dataset.py
+python scripts/train_traffic_model.py
+python -m unittest discover -s tests -v
+pnpm dev
+```
+
+See [the methodology](docs/GUNTUR_DATASET_METHODOLOGY.md), [model card](docs/MODEL_CARD.md), and [runbook](docs/GUNTUR_PIPELINE_RUNBOOK.md). **All baseline, event-demand, and travel-time values are modeled—not measured Guntur road-sensor data.** OSM geometry/identifiers retain OpenStreetMap attribution and ODbL obligations.
+
 RouteCast combines real external geospatial services with simulated and predicted intelligence.
 
 Real services include routing, geocoding, weather, map tiles, and POI discovery. Event-mode traffic, some city metrics, scenarios, and default predictive outputs are deterministic or heuristic unless an optional ONNX model is available.

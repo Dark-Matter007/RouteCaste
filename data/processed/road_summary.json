@@ -1,0 +1,19 @@
+{
+  "nodes": 20962,
+  "roads": 56056,
+  "road_types": {
+    "tertiary": 2972,
+    "residential": 48427,
+    "primary": 916,
+    "trunk": 205,
+    "secondary": 1693,
+    "trunk_link": 39,
+    "unclassified": 1729,
+    "tertiary_link": 10,
+    "primary_link": 39,
+    "living_street": 20,
+    "secondary_link": 6
+  },
+  "imputed_lanes_pct": 98.71,
+  "imputed_speeds_pct": 99.15
+}

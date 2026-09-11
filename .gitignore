@@ -74,6 +74,19 @@ wheels/
 *.pickle
 *.joblib
 
+# Reproducible Guntur pipeline caches and bulky raw geodata (processed CSVs are retained)
+data/raw/guntur_osm/*.graphml
+data/raw/guntur_osm/*.gpkg
+data/raw/guntur_osm/*.osm
+data/interim/
+models/artifacts/*.joblib
+models/artifacts/*.onnx
+data/processed/traffic_baseline.csv
+data/processed/dynamic_roads.csv
+data/processed/dynamic_index/
+data/processed/event_traffic.csv
+data/processed/route_results.csv
+
 # Uncomment if trained models become too large for GitHub
 # models/*.pt
 # models/*.pth

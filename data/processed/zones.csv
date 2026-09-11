@@ -1,0 +1,6 @@
+zone_id,zone_name,latitude,longitude,vehicle_share,nearest_node_id,share_source
+north,North Guntur,16.3696506,80.4379052,0.22,4415545785,modeled configurable assumption
+south,South Guntur,16.2437572,80.4379052,0.2,12285680402,modeled configurable assumption
+east,East Guntur,16.3117037,80.5019837,0.2,7896409543,modeled configurable assumption
+west,West Guntur,16.3117037,80.3709622,0.18,7890242907,modeled configurable assumption
+central,Central Guntur,16.3117037,80.4379052,0.2,4104657477,modeled configurable assumption

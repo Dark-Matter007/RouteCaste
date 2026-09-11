@@ -23,6 +23,7 @@ import { PoiPanel, type Poi } from "@/components/poi-panel"
 import { useRouteIntel, type IntelScenarioType } from "@/hooks/use-route-intel"
 import { RouteIntelPanel } from "@/components/route-intel-panel"
 import { WhatIfPanel } from "@/components/whatif-panel"
+import { GunturRoutePanel } from "@/components/guntur-route-panel"
 
 // map + 3D must be client-only
 const CityMap = dynamic(() => import("@/components/city-map").then((m) => m.CityMap), {
@@ -561,6 +562,7 @@ export default function Page() {
                 onFocus={(p) => setFlyTo({ lat: p.lat, lng: p.lon, zoom: 16, nonce: Date.now() })}
               />
             )}
+            <GunturRoutePanel />
             <MlStatus ml={data.ml} />
             <MetricsDashboard metrics={data.metrics} avgTravelMin={data.avgTravelMin} />
             <ScenarioPanel scenario={scenario} onScenario={setScenario} />
