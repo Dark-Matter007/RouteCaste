@@ -1,0 +1,73 @@
+{
+  "target": "event-period road travel time (simulated BPR label)",
+  "warning": "This model is a prototype trained on modeled labels and can learn to imitate BPR inputs; BPR remains the default routing method.",
+  "split": {
+    "train_events": [
+      "gtr_evt_001",
+      "gtr_evt_002"
+    ],
+    "validation_event": "gtr_evt_003",
+    "test_event": "gtr_evt_004"
+  },
+  "rows": {
+    "train": 336336,
+    "validation": 224224,
+    "test": 168168
+  },
+  "features": [
+    "length_m",
+    "lanes",
+    "free_flow_speed_kph",
+    "capacity_vph",
+    "hour",
+    "is_weekend",
+    "baseline_volume_vph",
+    "baseline_speed_kph",
+    "expected_attendance",
+    "distance_to_venue_m",
+    "time_relative_event_hr",
+    "event_volume_vph",
+    "incident_count",
+    "road_type",
+    "event_type",
+    "weather"
+  ],
+  "models": {
+    "ridge": {
+      "MAE_sec": 0.9806,
+      "RMSE_sec": 2.8039,
+      "R2": 0.94212,
+      "SMAPE_pct": 15.7247,
+      "fit_ms_per_row": 0.003898
+    },
+    "hist_gradient_boosting": {
+      "MAE_sec": 0.2611,
+      "RMSE_sec": 3.704,
+      "R2": 0.89901,
+      "SMAPE_pct": 1.3256,
+      "fit_ms_per_row": 0.025397
+    }
+  },
+  "baselines": {
+    "free_flow": {
+      "MAE_sec": 0.0684,
+      "RMSE_sec": 0.6764,
+      "R2": 0.99663
+    },
+    "baseline_only_bpr": {
+      "MAE_sec": 0.0078,
+      "RMSE_sec": 0.6547,
+      "R2": 0.99684
+    },
+    "analytical_bpr_event": {
+      "MAE_sec": 0.0,
+      "RMSE_sec": 0.0,
+      "R2": 1.0
+    }
+  },
+  "generation_version": "1.0.0",
+  "seed": 20260911,
+  "trained_at": "2026-09-11T17:33:55.297813+00:00",
+  "selected_model": "hist_gradient_boosting",
+  "limitations": "Only four demonstration events; held-out-event metrics quantify reconstruction of simulated BPR-derived labels, not Guntur sensor accuracy."
+}
